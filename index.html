@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farma Měšťánkovi - Biopotraviny z vlastní produkce</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🌾 Farma Měšťánkovi</h1>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Domů</a></li>
+                <li><a href="#about" class="nav-link">O nás</a></li>
+                <li><a href="#products" class="nav-link">Produkty</a></li>
+                <li><a href="#shop" class="nav-link">E-shop</a></li>
+                <li><a href="#visit" class="nav-link">Návštěva</a></li>
+                <li><a href="#contact" class="nav-link">Kontakt</a></li>
+                <li><a href="#cart" class="nav-link cart-link"><i class="fas fa-shopping-cart"></i> Košík <span class="cart-count" id="cartCount">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Kvalitní biopotraviny přímo z farmy</h2>
+            <p>Jahody, hrášek, česnek a další přírodní produkty bez pesticidů</p>
+            <button class="btn btn-primary" onclick="scrollToSection('products')">Prohlédnout produkty</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">O nás</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Tradice a kvalita</h3>
+                    <p>Farma Měšťánkovi je rodinný podnik zaměřený na produkci biopotravin. Pěstujeme jahody, hrášek a česnek bez používání chemických postřiků a pesticidů.</p>
+                    <p>Našim cílem je poskytovat našim zákazníkům zdravé, kvalitní potraviny, které mohou konzumovat bez obav. Všechny naše produkty jsou pěstovány s péčí a láskou k přírodě.</p>
+                    <p><strong>Chováme i kozy a ovce</strong> - návštěvníci si je mohou prohlédnout, zejména jsou návštěvy zajímavé pro děti.</p>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-leaf"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Naše produkty</h2>
+            <div class="products-grid">
+                <!-- Strawberries -->
+                <div class="product-card">
+                    <div class="product-icon">🍓</div>
+                    <h3>Jahody</h3>
+                    <p>Čerstvé, chutné jahody pěstované bez chemických postřiků. Dostupné v letní sezóně.</p>
+                    <ul class="product-list">
+                        <li><strong>Odrůdy:</strong> Senga Sengana, Elsanta, Honeoye</li>
+                        <li><strong>Dostupnost:</strong> červen - červenec</li>
+                        <li><strong>Forma prodeje:</strong> Sbírání na farmě nebo prodej produktu</li>
+                    </ul>
+                </div>
+
+                <!-- Peas -->
+                <div class="product-card">
+                    <div class="product-icon">🫘</div>
+                    <h3>Hrášek</h3>
+                    <p>Kvalitní hrášek pěstovaný bez postřiků. Ideální pro vaření, zmrazování nebo konzervování.</p>
+                    <ul class="product-list">
+                        <li><strong>Dostupnost:</strong> červenec - srpen</li>
+                        <li><strong>Forma prodeje:</strong> Čerstvý hrášek v luskách</li>
+                    </ul>
+                </div>
+
+                <!-- Garlic -->
+                <div class="product-card">
+                    <div class="product-icon">🧄</div>
+                    <h3>Česnek</h3>
+                    <p>Kvalitní česnek, který si můžete koupit i mimo obvyklé prodejní dny po telefonické domluvě.</p>
+                    <ul class="product-list">
+                        <li><strong>Dostupnost:</strong> celoročně</li>
+                        <li><strong>Forma prodeje:</strong> Svazky nebo jednotlivě</li>
+                        <li><strong>Objednávky:</strong> Telefonicky nebo e-mailem</li>
+                    </ul>
+                </div>
+
+                <!-- Grains -->
+                <div class="product-card">
+                    <div class="product-icon">🌾</div>
+                    <h3>Obilí</h3>
+                    <p>Pšenice a ovies v malých množstvích pro jednotlivé odběratele.</p>
+                    <ul class="product-list">
+                        <li><strong>Dostupnost:</strong> po sklizni (srpen - září)</li>
+                        <li><strong>Forma prodeje:</strong> Malé balení</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-shop Section -->
+    <section id="shop" class="section">
+        <div class="container">
+            <h2 class="section-title">Objednejte si naše produkty</h2>
+            <div class="shop-intro">
+                <p>Vyberte si produkty, které si chcete koupit. Objednávku potvrdíme a dohodujeme si detaily.</p>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterProducts('all')">Všechny</button>
+                <button class="filter-btn" onclick="filterProducts('berries')">Jahody</button>
+                <button class="filter-btn" onclick="filterProducts('vegetables')">Zelenina</button>
+                <button class="filter-btn" onclick="filterProducts('other')">Ostatní</button>
+            </div>
+
+            <div class="shop-grid" id="shopGrid">
+                <!-- Strawberry Products -->
+                <div class="shop-item" data-category="berries">
+                    <div class="item-image">🍓</div>
+                    <h4>Jahody čerstvé (1 kg)</h4>
+                    <p class="item-season">Sezóna: VI-VII</p>
+                    <p class="item-description">Čerstvé jahody přímo z farmy</p>
+                    <div class="item-footer">
+                        <span class="price">250 Kč</span>
+                        <button class="btn btn-small" onclick="addToCart('Jahody čerstvé (1 kg)', 250)">Přidat</button>
+                    </div>
+                </div>
+
+                <div class="shop-item" data-category="berries">
+                    <div class="item-image">🍓</div>
+                    <h4>Jahody čerstvé (2 kg)</h4>
+                    <p class="item-season">Sezóna: VI-VII</p>
+                    <p class="item-description">Větší balení čerstvých jahod</p>
+                    <div class="item-footer">
+                        <span class="price">450 Kč</span>
+                        <button class="btn btn-small" onclick="addToCart('Jahody čerstvé (2 kg)', 450)">Přidat</button>
+                    </div>
+                </div>
+
+                <!-- Pea Products -->
+                <div class="shop-item" data-category="vegetables">
+                    <div class="item-image">🫘</div>
+                    <h4>Hrášek čerstvý (1 kg)</h4>
+                    <p class="item-season">Sezóna: VII-VIII</p>
+                    <p class="item-description">Kvalitní hrášek v luskách</p>
+                    <div class="item-footer">
+                        <span class="price">180 Kč</span>
+                        <button class="btn btn-small" onclick="addToCart('Hrášek čerstvý (1 kg)', 180)">Přidat</button>
+                    </div>
+                </div>
+
+                <div class="shop-item" data-category="vegetables">
+                    <div class="item-image">🫘</div>
+                    <h4>Hrášek čerstvý (2 kg)</h4>
+                    <p class="item-season">Sezóna: VII-VIII</p>
+                    <p class="item-description">Větší balení čerstvého hrášku</p>
+                    <div class="item-footer">
+                        <span class="price">320 Kč</span>
+                        <button class="btn btn-small" onclick="addToCart('Hrášek čerstvý (2 kg)', 320)">Přidat</button>
+                    </div>
+                </div>
+
+                <!-- Garlic Products -->
+                <div class="shop-item" data-category="vegetables">
+                    <div class="item-image">🧄</div>
+                    <h4>Česnek svazek (500g)</h4>
+                    <p class="item-season">Celoroční dostupnost</p>
+                    <p class="item-description">Kvalitní česnek svázaný</p>
+                    <div class="item-footer">
+                        <span class="price">120 Kč</span>
+                        <button class="btn btn-small" onclick="addToCart('Česnek svazek (500g)', 120)">Přidat</button>
+                    </div>
+                </div>
+
+                <div class="shop-item" data-category="vegetables">
+                    <div class="item-image">🧄</div>
+                    <h4>Česnek svazek (1 kg)</h4>
+                    <p class="item-season">Celoroční dostupnost</p>
+                    <p class="item-description">Větší svazek česneku</p>
+                    <div class="item-footer">
+                        <span class="price">200 Kč</span>
+                        <button class="btn btn-small" onclick="addToCart('Česnek svazek (1 kg)', 200)">Přidat</button>
+                    </div>
+                </div>
+
+                <!-- Grain Products -->
+                <div class="shop-item" data-category="other">
+                    <div class="item-image">🌾</div>
+                    <h4>Pšenice (2 kg)</h4>
+                    <p class="item-season">Sezóna: VIII-IX</p>
+                    <p class="item-description">Kvalitní pšenice v malém balení</p>
+                    <div class="item-footer">
+                        <span class="price">90 Kč</span>
+                        <button class="btn btn-small" onclick="addToCart('Pšenice (2 kg)', 90)">Přidat</button>
+                    </div>
+                </div>
+
+                <div class="shop-item" data-category="other">
+                    <div class="item-image">🌾</div>
+                    <h4>Ovies (2 kg)</h4>
+                    <p class="item-season">Sezóna: VIII-IX</p>
+                    <p class="item-description">Kvalitní ovies v malém balení</p>
+                    <div class="item-footer">
+                        <span class="price">85 Kč</span>
+                        <button class="btn btn-small" onclick="addToCart('Ovies (2 kg)', 85)">Přidat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Váš nákupní košík</h2>
+            <div id="cartItems" class="cart-items">
+                <p class="empty-cart">Košík je prázdný</p>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <strong>Celkem:</strong>
+                    <span id="cartTotal">0 Kč</span>
+                </div>
+                <button class="btn btn-primary" id="checkoutBtn" onclick="checkout()" style="display:none;">Pokračovat na objednávku</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visit Section -->
+    <section id="visit" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Jak nás navštívit</h2>
+            <div class="visit-grid">
+                <div class="visit-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Otevírací doba</h3>
+                    <p><strong>Sběr jahod a prodej:</strong></p>
+                    <p>Běžně během prodejních dnů. Mimo tyto dny je možné se domluvit telefonicky.</p>
+                </div>
+
+                <div class="visit-card">
+                    <i class="fas fa-car"></i>
+                    <h3>Parkování</h3>
+                    <p>Na farmě je dostupné parkování pro naše návštěvníky.</p>
+                </div>
+
+                <div class="visit-card">
+                    <i class="fas fa-child"></i>
+                    <h3>Pro rodiny s dětmi</h3>
+                    <p>Děti se mohou podívat na naše kozy a ovce. Sběr jahod je zajímavá aktivita pro celou rodinu.</p>
+                </div>
+
+                <div class="visit-card">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>Sběr jahod</h3>
+                    <p>Máte možnost přijít si jahody sami nasbírat. Všechny potřeby vám poskytneme.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Kontakt</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Farma Měšťánkovi</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Telefon:</strong>
+                            <p><a href="tel:+420XXXXXXXXX">+420 XXX XXX XXX</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email:</strong>
+                            <p><a href="mailto:info@farmamestankovi.cz">info@farmamestankovi.cz</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-pin"></i>
+                        <div>
+                            <strong>Adresa:</strong>
+                            <p>Farma Měšťánkovi<br>Měšťánkovice<br>Česká republika</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Vaše jméno" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Váš email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Předmět zprávy" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Vaše zpráva" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Odeslat zprávu</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Farma Měšťánkovi. Všechna práva vyhrazena.</p>
+            <p>Vytvořeno s <i class="fas fa-heart"></i> pro kvalitní biopotraviny</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
