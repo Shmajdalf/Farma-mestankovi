@@ -511,6 +511,11 @@ html {
 }
 
 /* Responsive Design */
+.responsive-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+  }
 @media (max-width: 768px) {
     .mobile-menu-btn {
         display: flex;
